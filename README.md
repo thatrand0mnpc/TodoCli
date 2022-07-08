@@ -6,7 +6,7 @@ A simple cli todo utility to demonstrates a CRUD application with database conne
 
 ```python
 PyYAML==6.0
-SQLAlchemy==1.4.29
+SQLAlchemy==1.4.39
 ```
 
 ## Installation
