@@ -1,6 +1,7 @@
 """Configurations."""
 from enum import Enum
 from pathlib import Path
+
 import yaml
 
 CONFIG_FILE = 'config.yaml'  # config file name

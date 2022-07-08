@@ -1,7 +1,8 @@
 """Manages cli argument parser for the application."""
-from argparse import ArgumentParser
-from todocli import views
 import sys
+from argparse import ArgumentParser
+
+from todocli import views
 
 
 class App:

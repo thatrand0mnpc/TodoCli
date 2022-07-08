@@ -1,8 +1,8 @@
 """Views for todo model."""
-from todocli.base import Base, engine, Session
-from todocli.models import Todo
 from typing import Iterator
 
+from todocli.base import Base, Session, engine
+from todocli.models import Todo
 
 Base.metadata.create_all(engine)  # create tables for models
 
