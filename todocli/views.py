@@ -1,8 +1,8 @@
 """Views for todo model."""
-from todocli.base import Base, engine, Session
-from todocli.models import Todo
 from typing import Iterator
 
+from todocli.base import Base, Session, engine
+from todocli.models import Todo
 
 Base.metadata.create_all(engine)  # create tables for models
 
@@ -22,7 +22,7 @@ def add_todo(title: str, check: bool = False) -> None:
     session.close()
 
 
-def list_todo(indexes: int | list[int] = None) -> None:
+def list_todo(indexes: int | list[int] | None = None) -> None:
     """List todo items.
 
     :param indexes: todo item id, defaults to None
@@ -49,7 +49,7 @@ def list_todo(indexes: int | list[int] = None) -> None:
     session.close()
 
 
-def update_todo(index: int, title: str = None, check: bool = None) -> None:
+def update_todo(index: int, title: str | None = None, check: bool | None = None) -> None:
     """Update todo items.
 
     :param index: todo item id
@@ -72,7 +72,7 @@ def update_todo(index: int, title: str = None, check: bool = None) -> None:
     session.close()
 
 
-def update_todo_check_many(indexes: list[int], check: bool = None) -> None:
+def update_todo_check_many(indexes: list[int], check: bool | None = None) -> None:
     """Update status of many todo items.
 
     :param indexes: todo item id
@@ -90,7 +90,7 @@ def update_todo_check_many(indexes: list[int], check: bool = None) -> None:
     session.close()
 
 
-def update_todo_all(check: bool = None) -> None:
+def update_todo_all(check: bool | None = None) -> None:
     """Update status of all todo items.
 
     :param check: todo status, defaults to None

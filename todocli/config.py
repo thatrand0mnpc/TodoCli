@@ -1,13 +1,14 @@
 """Configurations."""
 from enum import Enum
 from pathlib import Path
+
 import yaml
 
 CONFIG_FILE = 'config.yaml'  # config file name
 # file path from parent dir
 CONFIG_FILE_PATH = Path(__file__).resolve().parent.parent.joinpath(CONFIG_FILE)
 
-with open(CONFIG_FILE, 'r') as file:
+with open(CONFIG_FILE, 'r', encoding='utf8') as file:
     CONFIG = yaml.safe_load(file)
 
 
